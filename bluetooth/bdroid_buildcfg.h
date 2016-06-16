@@ -27,7 +27,17 @@
 // Disables read remote device feature
 #define MAX_ACL_CONNECTIONS   16
 #define MAX_L2CAP_CHANNELS    20
-#define BLE_VND_INCLUDED   TRUE
 // skips conn update at conn completion
-#define BT_CLEAN_TURN_ON_DISABLED 1
+#define BTA_DISABLE_DELAY 1000 /* in milliseconds */
+
+// Wide-band speech support
+#define BTM_WBS_INCLUDED TRUE
+#define BTIF_HF_WBS_PREFERRED TRUE
+
+// Google VSC spec support
+#define BLE_VND_INCLUDED TRUE
+
+// QCOM power management workaround
+#define BT_CLEAN_TURN_ON_DISABLED TRUE
+
 #endif
