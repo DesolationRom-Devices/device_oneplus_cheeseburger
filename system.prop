@@ -167,6 +167,9 @@ ro.qti.sensors.mot_detect=true
 ro.qti.sensors.dpc=true
 ro.qti.sensors.multishake=true
 
+# Tethering
+net.tethering.noprovisioning=true
+
 # Time service
 persist.timed.enable=true
 
