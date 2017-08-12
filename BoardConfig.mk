@@ -141,6 +141,15 @@ WITH_DEXPREOPT := false
 # FM
 BOARD_HAVE_QCOM_FM := true
 
+# Enable dexpreopt to speed boot time
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),user)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+   endif
+  endif
+endif
+
 # Gestures
 TARGET_GESTURES_NODE := "/proc/touchpanel/gesture_enable"
 
@@ -211,7 +220,8 @@ WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/wlan.ko"
 WIFI_DRIVER_MODULE_NAME := "wlan"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
+# D2TW
+TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
+
 # inherit from the proprietary version
 -include vendor/oneplus/cheeseburger/BoardConfigVendor.mk
-
-
